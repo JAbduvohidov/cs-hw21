@@ -1,0 +1,32 @@
+@model homework21.Models.Person
+@{
+    ViewData["Title"] = "New account";
+}
+
+<style>
+    .row {
+        margin: 8px;
+    }
+</style>
+
+<form asp-action="Create" method="post">
+    <div class="row">
+        <div class="col-md-2">LastName</div>
+        <div class="col">
+            <input required autocomplete="off" asp-for="LastName" class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">FirstName</div>
+        <div class="col">
+            <input required autocomplete="off" asp-for="FirstName" class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">MidlleName</div>
+        <div class="col">
+            <input autocomplete="off" asp-for="MiddleName" class="form-control" type="text" />
+        </div>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Create" style="float: right; margin-right: 22px;" />
+</form>

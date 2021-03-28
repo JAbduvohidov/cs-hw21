@@ -1,0 +1,38 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "People";
+}
+
+<form asp-controller="Person" asp-action="FindById" method="get" style="margin-bottom: 8px;">
+    <div class="row">
+        <div class="col-md-1">Id</div>
+        <div class="col">
+            <input required name="id" class="form-control" type="text" />
+        </div>
+        <button class="btn btn-warning" type="submit">Find by ID</button>
+    </div>
+</form>
+
+<form asp-controller="Person" asp-action="FindByFullName" method="get" style="margin-bottom: 8px;">
+    <div class="row">
+        <div class="col-md-1">Full name</div>
+        <div class="col">
+            <input required name="fullName" class="form-control" type="text" />
+        </div>
+        <button class="btn btn-warning" type="submit">Find by FullName</button>
+    </div>
+</form>
+
+<div class="row">
+    <a href="~/Person/Create" class="btn btn-primary">Create</a>
+</div>
+
+<div class="row d-block">
+    @foreach (var person in Model)
+    {
+        <div class="border border-primary rounded" style="margin: 8px; padding: 8px">
+            <div>ID: @person.Id</div>
+            <div>Full Name: @person.LastName @person.FirstName @person.MiddleName</div>
+        </div>
+    }
+</div>

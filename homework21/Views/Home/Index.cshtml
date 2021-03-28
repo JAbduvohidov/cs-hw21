@@ -1,0 +1,12 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (var person in Model)
+{
+    <div class="border border-primary rounded" style="margin: 8px; padding: 8px">
+        <div>ID: @person.Id</div>
+        <div>Full Name: @person.LastName @person.FirstName @person.MiddleName</div>
+    </div>
+}
